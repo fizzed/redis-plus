@@ -5,7 +5,7 @@
     <artifactId>redis-plus</artifactId>
     <name>redis-plus</name>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>com.fizzed</groupId>
@@ -16,7 +16,7 @@
     <scm>
         <url>https://github.com/fizzed/redis-plus</url>
         <connection>scm:git:git@github.com:fizzed/redis-plus.git</connection>
-      <tag>v1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <modules>
