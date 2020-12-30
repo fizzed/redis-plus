@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fizzed</groupId>
+    <artifactId>redis-plus</artifactId>
+    <name>redis-plus</name>
+    <packaging>pom</packaging>
+    <version>0.0.7-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.fizzed</groupId>
+        <artifactId>maven-parent</artifactId>
+        <version>2.1.0</version>
+    </parent>
+
+    <scm>
+        <url>https://github.com/fizzed/redis-plus</url>
+        <connection>scm:git:git@github.com:fizzed/redis-plus.git</connection>
+    </scm>
+
+    <modules>
+        <module>jedis-core</module>
+        <module>jedis-queue</module>
+        <module>jedis-ninja-module</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <ninja-plus.version>6.2.2</ninja-plus.version>
+        <crux.version>0.23.0</crux.version>
+        <queue.version>1.0.0</queue.version>
+        <ninja.version>6.2.2</ninja.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                            <arg>-Xlint:all</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        
+        <dependencies>
+            <dependency>
+                <groupId>com.fizzed</groupId>
+                <artifactId>jedis-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.fizzed</groupId>
+                <artifactId>crux-util</artifactId>
+                <version>${crux.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fizzed</groupId>
+                <artifactId>crux-uri</artifactId>
+                <version>${crux.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fizzed</groupId>
+                <artifactId>queue-core</artifactId>
+                <version>${queue.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+            
+            <!-- for ninjaframework integration -->
+            
+            <dependency>
+                <groupId>com.fizzed</groupId>
+                <artifactId>ninja-plus</artifactId>
+                <version>${ninja-plus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+            <!-- primarily for testing -->
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.8.47</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>java-hamcrest</artifactId>
+                <version>2.0.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+
+        </dependencies>
+        
+    </dependencyManagement>
+    
+</project>
